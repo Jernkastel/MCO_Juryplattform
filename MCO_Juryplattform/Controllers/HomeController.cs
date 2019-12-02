@@ -12,7 +12,7 @@ namespace MCO_Juryplattform.Controllers
         {
             return View();
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
