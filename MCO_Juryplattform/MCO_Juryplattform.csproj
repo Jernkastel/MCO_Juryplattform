@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Migrations\201912021230284_initial.cs" />
     <Compile Include="Migrations\201912021230284_initial.Designer.cs">
       <DependentUpon>201912021230284_initial.cs</DependentUpon>
@@ -148,6 +149,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="skit\CompanyQuestions.cs" />
+    <Compile Include="skit\Form.cs" />
     <Compile Include="Models\FormQuestions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,10 +198,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Company\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
