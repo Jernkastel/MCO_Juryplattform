@@ -3,7 +3,7 @@ namespace MCO_Juryplattform.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ops3 : DbMigration
+    public partial class iborkedit : DbMigration
     {
         public override void Up()
         {

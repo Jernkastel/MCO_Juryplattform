@@ -128,32 +128,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Migrations\201912052257152_iborkedit.cs" />
+    <Compile Include="Migrations\201912052257152_iborkedit.Designer.cs">
+      <DependentUpon>201912052257152_iborkedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
-    <Compile Include="Migrations\201912021230284_initial.cs" />
-    <Compile Include="Migrations\201912021230284_initial.Designer.cs">
-      <DependentUpon>201912021230284_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912021236119_ops.cs" />
-    <Compile Include="Migrations\201912021236119_ops.Designer.cs">
-      <DependentUpon>201912021236119_ops.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912021239198_ops2.cs" />
-    <Compile Include="Migrations\201912021239198_ops2.Designer.cs">
-      <DependentUpon>201912021239198_ops2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912021244122_ops3.cs" />
-    <Compile Include="Migrations\201912021244122_ops3.Designer.cs">
-      <DependentUpon>201912021244122_ops3.cs</DependentUpon>
+    <Compile Include="Models\FormQuestions.cs" />
+    <Compile Include="Models\JuryModel.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Migrations\201912050308364_redo.cs" />
+    <Compile Include="Migrations\201912050308364_redo.Designer.cs">
+      <DependentUpon>201912050308364_redo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\FormQuestions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\JuryModel.cs" />
-    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\VoteCheck.cs" />
@@ -196,6 +189,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -214,17 +209,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912021230284_initial.resx">
-      <DependentUpon>201912021230284_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912050308364_redo.resx">
+      <DependentUpon>201912050308364_redo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912021236119_ops.resx">
-      <DependentUpon>201912021236119_ops.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912021239198_ops2.resx">
-      <DependentUpon>201912021239198_ops2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912021244122_ops3.resx">
-      <DependentUpon>201912021244122_ops3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912052257152_iborkedit.resx">
+      <DependentUpon>201912052257152_iborkedit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace MCO_Juryplattform.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ops3 : IMigrationMetadata
+    public sealed partial class iborkedit : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ops3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(iborkedit));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912021244122_ops3"; }
+            get { return "201912052257152_iborkedit"; }
         }
         
         string IMigrationMetadata.Source

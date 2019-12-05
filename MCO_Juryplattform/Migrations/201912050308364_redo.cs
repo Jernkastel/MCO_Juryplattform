@@ -3,14 +3,16 @@ namespace MCO_Juryplattform.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ops2 : DbMigration
+    public partial class redo : DbMigration
     {
         public override void Up()
         {
+            DropColumn("dbo.FormQuestions", "Category");
         }
         
         public override void Down()
         {
+            AddColumn("dbo.FormQuestions", "Category", c => c.Binary(nullable: false, maxLength: 50));
         }
     }
 }

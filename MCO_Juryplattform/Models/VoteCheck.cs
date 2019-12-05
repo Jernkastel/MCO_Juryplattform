@@ -19,6 +19,8 @@ namespace MCO_Juryplattform
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CompanyId { get; set; }
 
+        [Key]
+        [Column(Order = 2)]
         public bool IsVoted { get; set; }
     }
 }

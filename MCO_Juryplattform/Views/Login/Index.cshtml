@@ -1,0 +1,28 @@
+﻿@model MCO_Juryplattform.Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h1>Logga in</h1>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div>Namn: </div>
+        <div>@Html.TextBoxFor(m => m.UserName)</div>
+    </div>
+
+    <div>
+        <div>Lösenord: </div>
+        <div>@Html.PasswordFor(m => m.Password)</div>
+    </div>
+
+    <div>
+        <input type="submit" value="Logga in" class="btn btn-default" />
+    </div>
+    <div>
+        @Html.ValidationSummary()
+    </div>
+}
+

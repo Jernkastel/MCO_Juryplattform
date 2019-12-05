@@ -8,11 +8,11 @@ namespace MCO_Juryplattform.Controllers
 {
     public class CompanyController : Controller
     {
-        // GET: Company
         public ActionResult Index()
         {
             return View(GetAllCustomers());
         }
+        [Authorize]
         public List<Company> GetAllCustomers()
         {
             using (JuryModel db = new JuryModel())

@@ -7,13 +7,13 @@ namespace MCO_Juryplattform.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ops : IMigrationMetadata
+    public sealed partial class redo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ops));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(redo));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912021236119_ops"; }
+            get { return "201912050308364_redo"; }
         }
         
         string IMigrationMetadata.Source

@@ -11,8 +11,8 @@ namespace MCO_Juryplattform
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string[] Category { get; set; }
+        [StringLength(50)]
+        public string Category { get; set; }
 
         [Column(TypeName = "ntext")]
         [Required]
