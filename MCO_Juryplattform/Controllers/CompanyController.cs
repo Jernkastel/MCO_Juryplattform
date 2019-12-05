@@ -20,5 +20,14 @@ namespace MCO_Juryplattform.Controllers
                 return db.Company.ToList();
             }
         }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            using (JuryModel db = new JuryModel())
+            {
+                
+                return RedirectToAction("Index", "Question",(db.Company.Where(x => x.Id == id).FirstOrDefault()));
+            }
+        }
     }
 }

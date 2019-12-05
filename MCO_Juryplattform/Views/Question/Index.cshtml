@@ -1,40 +1,64 @@
-﻿@model IEnumerable<MCO_Juryplattform.FormQuestions>
+﻿@model MCO_Juryplattform.Models.CompanyQuestions
 
 @{
 	ViewBag.Title = "Index";
 }
 
-<h2>Index2</h2>
+<h2>@Html.DisplayFor(modelItem =>Model.Companyname)</h2>
 
 @using (Html.BeginForm("Index", "QuestionController", FormMethod.Post))
 {
-	<table class="table">
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Question)
-			</th>
-			<th></th>
-		</tr>
+<table class="table">
+	<tr>
+		<th>
+			<h2>Question</h2>
+		</th>
+		<th><label>avstå att svara</label></th>
+		<th><label>1</label></th>
+		<th><label>2</label></th>
+		<th><label>3</label></th>
+		<th><label>4</label></th>
+		<th><label>5</label></th>
 
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.Question)
-				</td>
-				<td>
-					@Html.RadioButton(item.Id.ToString(), new { id = 0 })
-					@Html.RadioButton(item.Id.ToString(), new { id = 1 })
-					@Html.RadioButton(item.Id.ToString(), new { id = 2 })
-					@Html.RadioButton(item.Id.ToString(), new { id = 3 })
-					@Html.RadioButton(item.Id.ToString(), new { id = 4 })
-				</td>
-			</tr>
-		}
+
+
+	</tr>
+
+	@foreach (var item in Model.Forms)
+	{
+
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.Question)
+
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 0 })
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 1 })
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 2 })
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 3 })
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 4 })
+		</td>
+		<td>
+			@Html.RadioButton(item.FormId.ToString(), new { id = 6 })
+
+
+		</td>
+	</tr>
+	}
 		<tr>
-			
+
 			<td><input type="submit" value="Submit" /></td>
 		</tr>
-	</table>
 	
+	</table>
+
 }

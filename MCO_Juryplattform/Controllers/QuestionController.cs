@@ -9,11 +9,16 @@ namespace MCO_Juryplattform.Controllers
 {
     public class QuestionController : Controller
     {
-        
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(int id)
         {
-            return View(questions());
+            return View(test(id));
         }
+
+        //public ActionResult Index()
+        //{
+        //    return View(test(1));
+        //}
         public List<FormQuestions> questions()
         {
             
@@ -23,17 +28,12 @@ namespace MCO_Juryplattform.Controllers
                 return db.FormQuestions.ToList();
             }
         }
-
-
-
-
-
-        public CompanyQuestions test(int cosencompany)
+        private CompanyQuestions test(int cosencompany)
         {
             var tempform = new List<Form>();
+            CompanyQuestions form;
             using (JuryModel db = new JuryModel())
             {
-                
                 foreach (var item in db.FormQuestions.ToList())
                 {
                     tempform.Add(new Form
@@ -43,13 +43,21 @@ namespace MCO_Juryplattform.Controllers
                     });
                 }
             }
-            var form = new CompanyQuestions
+            using (JuryModel db = new JuryModel())
             {
-                CompanyId = cosencompany,
-                Forms = tempform
-            };
-            
-        return form;
+                
+                form = new CompanyQuestions
+                {
+                    
+                    Companyname = db.Company.Find(cosencompany).Name,
+                    CompanyId = cosencompany,
+                    Forms = tempform
+                };
+            }
+
+
+
+                return form;
 
         }
     }
