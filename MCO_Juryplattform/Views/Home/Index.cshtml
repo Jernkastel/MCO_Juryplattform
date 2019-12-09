@@ -1,13 +1,28 @@
-﻿@model IEnumerable<MCO_Juryplattform.Company>
+﻿@model MCO_Juryplattform.Login
+
 @{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Login";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<h1>Logga in</h1>
 
-<div>
-</div>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+	<div>
+		<div>Namn: </div>
+		<div>@Html.TextBoxFor(m => m.UserName)</div>
+	</div>
+
+	<div>
+		<div>Lösenord: </div>
+		<div>@Html.PasswordFor(m => m.Password)</div>
+	</div>
+
+	<div>
+		<input type="submit" value="Logga in" class="btn btn-default" />
+	</div>
+	<div>
+		@Html.ValidationSummary()
+	</div>
+}
+@Html.ActionLink("index", "index", "Question")

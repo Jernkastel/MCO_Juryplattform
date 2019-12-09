@@ -9,16 +9,20 @@ namespace MCO_Juryplattform.Controllers
 {
     public class QuestionController : Controller
     {
+        
         [HttpGet]
         public ActionResult Index(int id)
         {
             return View(test(id));
         }
+        
+        [HttpPost]
+        public ActionResult Getting(CompanyQuestions test)
+        {
+            Console.Write("dlökjf");
+            return View();
+        }
 
-        //public ActionResult Index()
-        //{
-        //    return View(test(1));
-        //}
         public List<FormQuestions> questions()
         {
             
@@ -42,23 +46,15 @@ namespace MCO_Juryplattform.Controllers
                         FormId = item.Id
                     });
                 }
-            }
-            using (JuryModel db = new JuryModel())
-            {
-                
                 form = new CompanyQuestions
                 {
-                    
                     Companyname = db.Company.Find(cosencompany).Name,
                     CompanyId = cosencompany,
                     Forms = tempform
                 };
-            }
-
-
-
                 return form;
-
+            }
+           
         }
     }
 }

@@ -11,6 +11,6 @@ namespace MCO_Juryplattform.Models
 
         public string Question { get; set; }
 
-        public int Grade { get; set; }
+        public List<Grade> Grade { get; set; }
     }
 }

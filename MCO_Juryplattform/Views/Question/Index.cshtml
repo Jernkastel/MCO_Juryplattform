@@ -4,61 +4,58 @@
 	ViewBag.Title = "Index";
 }
 
-<h2>@Html.DisplayFor(modelItem =>Model.Companyname)</h2>
+<h2>@Html.DisplayFor(modelItem => Model.Companyname)</h2>
 
-@using (Html.BeginForm("Index", "QuestionController", FormMethod.Post))
+@using (Html.BeginForm("Geting", "Question", FormMethod.Post))
 {
-<table class="table">
-	<tr>
-		<th>
-			<h2>Question</h2>
-		</th>
-		<th><label>avstå att svara</label></th>
-		<th><label>1</label></th>
-		<th><label>2</label></th>
-		<th><label>3</label></th>
-		<th><label>4</label></th>
-		<th><label>5</label></th>
+	
+	<table class="table">
+		<tr>
+			<th>
+				<h2>Question</h2>
+			</th>
+			<th><label>avstå att svara</label></th>
+					<th><label>1</label></th>
+					<th><label>2</label></th>
+					<th><label>3</label></th>
+					<th><label>4</label></th>
+					<th><label>5</label></th>
 
 
 
-	</tr>
+				</tr>
 
-	@foreach (var item in Model.Forms)
-	{
+				@foreach (var item in Model.Forms)
+				{
 
-	<tr>
-		<td>
-			@Html.DisplayFor(modelItem => item.Question)
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Question)
 
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 0 })
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 1 })
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 2 })
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 3 })
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 4 })
-		</td>
-		<td>
-			@Html.RadioButton(item.FormId.ToString(), new { id = 6 })
+					</td>
+					@for (int i = 0; i < 6; i++)
+					{
+						<td>
+							@Html.RadioButton(item.FormId.ToString(), new { id = i })
+						</td>
+					}
 
 
-		</td>
-	</tr>
-	}
+				</tr>
+				}
+		
+		@*<tr>
+			First name:
+			<input type="text" name="fname" />
+			<br />
+		</tr>*@
+
 		<tr>
 
 			<td><input type="submit" value="Submit" /></td>
 		</tr>
-	
+
 	</table>
+	@Html.ActionLink("Geting", "Geting", "Question", new { fnamne = "uisod" })
 
 }

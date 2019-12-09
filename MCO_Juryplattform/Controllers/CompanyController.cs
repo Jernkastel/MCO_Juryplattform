@@ -8,6 +8,7 @@ namespace MCO_Juryplattform.Controllers
 {
     public class CompanyController : Controller
     {
+        
         // GET: Company
         public ActionResult Index()
         {
@@ -28,6 +29,11 @@ namespace MCO_Juryplattform.Controllers
                 
                 return RedirectToAction("Index", "Question",(db.Company.Where(x => x.Id == id).FirstOrDefault()));
             }
+        }
+        [HttpGet]
+        public ActionResult Link(string href)
+        {
+            return Redirect("http://www.google.com");
         }
     }
 }
