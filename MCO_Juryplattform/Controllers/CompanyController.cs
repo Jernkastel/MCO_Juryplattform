@@ -8,8 +8,7 @@ namespace MCO_Juryplattform.Controllers
 {
     public class CompanyController : Controller
     {
-        
-        // GET: Company
+        [Authorize]
         public ActionResult Index()
         {
             return View(GetAllCustomers());
@@ -21,6 +20,7 @@ namespace MCO_Juryplattform.Controllers
                 return db.Company.ToList();
             }
         }
+        [Authorize]
         [HttpGet]
         public ActionResult Details(int id)
         {

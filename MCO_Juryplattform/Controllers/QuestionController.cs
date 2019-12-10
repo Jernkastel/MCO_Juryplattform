@@ -9,13 +9,13 @@ namespace MCO_Juryplattform.Controllers
 {
     public class QuestionController : Controller
     {
-        
+        [Authorize]
         [HttpGet]
         public ActionResult Index(int id)
         {
             return View(test(id));
         }
-        
+
         [HttpPost]
         public ActionResult Getting(CompanyQuestions test)
         {

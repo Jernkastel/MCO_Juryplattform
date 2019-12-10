@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Migrations\201912021230284_initial.cs" />
@@ -145,6 +146,10 @@
     <Compile Include="Migrations\201912021244122_ops3.cs" />
     <Compile Include="Migrations\201912021244122_ops3.Designer.cs">
       <DependentUpon>201912021244122_ops3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912100155596_blergh.cs" />
+    <Compile Include="Migrations\201912100155596_blergh.Designer.cs">
+      <DependentUpon>201912100155596_blergh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
@@ -200,6 +205,10 @@
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Question\Getting.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AdminCompany.cshtml" />
+    <Content Include="Views\Admin\AdminQuestions.cshtml" />
+    <Content Include="Views\Admin\AdminForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -229,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912021244122_ops3.resx">
       <DependentUpon>201912021244122_ops3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912100155596_blergh.resx">
+      <DependentUpon>201912100155596_blergh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
