@@ -7,6 +7,11 @@ namespace MCO_Juryplattform.Models
 {
     public class Grade
     {
-        public int Answers { get; set; }
+
+        public int QuestionId { get; set; }
+
+        public string Question { get; set; }
+
+        public int Answer { get; set; }
     }
 }

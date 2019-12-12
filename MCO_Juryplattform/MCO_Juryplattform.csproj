@@ -149,9 +149,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="skit\Grade.cs" />
     <Compile Include="skit\CompanyQuestions.cs" />
-    <Compile Include="skit\Form.cs" />
+    <Compile Include="skit\Grade.cs" />
     <Compile Include="Models\FormQuestions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
