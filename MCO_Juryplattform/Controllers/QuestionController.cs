@@ -10,17 +10,17 @@ namespace MCO_Juryplattform.Controllers
     public class QuestionController : Controller
     {
         
-        //[HttpGet]
-        public ActionResult Index(/*int id*/)
+        [HttpGet]
+        public ActionResult Index(int id)
         {
-            return View(Viewqestionmodel(2));
+            return View(Viewqestionmodel(id));
         }
         
         [HttpPost]
         public ActionResult Getting(CompanyQuestions anwsers)
         {
             addresults(anwsers);
-            //addsubmitvote(anwsers);
+            addsubmitvote(anwsers);
             return RedirectToAction("Index", "Company");
         }
         private void addresults(CompanyQuestions test)
@@ -35,6 +35,7 @@ namespace MCO_Juryplattform.Controllers
                     newResult.Grade = test.Grades[i].Answer;
                 db.Result.Add(newResult);
                 }
+                var temp = db.Result;
                 db.SaveChanges();
             }
         }
@@ -51,15 +52,7 @@ namespace MCO_Juryplattform.Controllers
                 //db.SaveChanges();
             }
         } 
-        public List<FormQuestions> questions()
-        {
-            
-            using (JuryModel db = new JuryModel())
-            {
 
-                return db.FormQuestions.ToList();
-            }
-        }
         private CompanyQuestions Viewqestionmodel(int cosencompany)
         {
             var tempform = new List<Grade>();
