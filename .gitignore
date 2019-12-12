@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/MCO_Juryplattform/Migrations/201912121543194_vtf.resx
+/MCO_Juryplattform/Migrations/201912121543194_vtf.Designer.cs
+/MCO_Juryplattform/Migrations/201912121543194_vtf.cs

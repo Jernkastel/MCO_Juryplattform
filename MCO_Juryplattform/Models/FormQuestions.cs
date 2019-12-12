@@ -12,7 +12,7 @@ namespace MCO_Juryplattform
 
         [Required]
         [MaxLength(50)]
-        public string Category { get; set; }
+        public string[] Category { get; set; }
 
         [Column(TypeName = "ntext")]
         [Required]
