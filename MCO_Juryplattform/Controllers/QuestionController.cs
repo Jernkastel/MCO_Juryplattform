@@ -23,15 +23,7 @@ namespace MCO_Juryplattform.Controllers
             return View();
         }
 
-        public List<FormQuestions> questions()
-        {
-            
-            using (JuryModel db = new JuryModel())
-            {
-
-                return db.FormQuestions.ToList();
-            }
-        }
+        
         private CompanyQuestions test(int cosencompany)
         {
             var tempform = new List<Form>();

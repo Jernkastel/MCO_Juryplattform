@@ -206,9 +206,12 @@
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Question\Getting.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\AdminCompany.cshtml" />
     <Content Include="Views\Admin\AdminQuestions.cshtml" />
     <Content Include="Views\Admin\AdminForm.cshtml" />
+    <Content Include="Views\Admin\AdminCompany.cshtml" />
+    <Content Include="Views\Admin\AdminCompanyEdit.cshtml" />
+    <Content Include="Views\Admin\AddCompany.cshtml" />
+    <Content Include="Views\Admin\AdminQuestionsEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

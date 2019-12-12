@@ -26,7 +26,6 @@ namespace MCO_Juryplattform.Controllers
         {
             using (JuryModel db = new JuryModel())
             {
-                
                 return RedirectToAction("Index", "Question",(db.Company.Where(x => x.Id == id).FirstOrDefault()));
             }
         }
