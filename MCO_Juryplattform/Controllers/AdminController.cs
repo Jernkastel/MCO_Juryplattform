@@ -8,13 +8,13 @@ namespace MCO_Juryplattform.Controllers
 {
     public class AdminController : Controller
     {
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
         #region Company
-        //[Authorize]
+        [Authorize]
         public ActionResult AdminCompany()
         {
             return View(GetAllCustomers());
@@ -27,7 +27,7 @@ namespace MCO_Juryplattform.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult AdminCompanyEdit(int id)
         {
@@ -40,7 +40,7 @@ namespace MCO_Juryplattform.Controllers
                 return db.Company.Find(pk);
             }
         }
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public ActionResult AdminCompanyEdit(Company company)
         {
@@ -53,10 +53,12 @@ namespace MCO_Juryplattform.Controllers
             }
             return RedirectToAction("AdminCompany", "Admin");
         }
+        [Authorize]
         public ActionResult AddCompany()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult AddCompany(Company company)
         {
@@ -67,11 +69,12 @@ namespace MCO_Juryplattform.Controllers
             }
             return RedirectToAction("AdminCompany", "Admin");
         }
+        [Authorize]
         public ActionResult DeletCompany(int companyId)
         {
             using (JuryModel db = new JuryModel())
             {
-                
+
                 //db.Company
                 //    .Find(companyId)
                 //    .product
@@ -82,7 +85,8 @@ namespace MCO_Juryplattform.Controllers
                 //                       .Remove(db.customer.Find(customerPK)));
 
                 //db.customer.Remove(db.customer.Find(customerPK));
-                //db.SaveChanges();
+                db.Company.Remove(db.Company.Find(companyId));
+                db.SaveChanges();
             }
             return RedirectToAction("AdminCompany", "Admin");
         }
@@ -94,6 +98,7 @@ namespace MCO_Juryplattform.Controllers
         {
             return View(questions());
         }
+        [Authorize]
         [HttpGet]
         public ActionResult AdminQuestionsEdit(int id)
         {
@@ -107,19 +112,37 @@ namespace MCO_Juryplattform.Controllers
                 return db.FormQuestions.Find(pk);
             }
         }
+        [Authorize]
         [HttpPost]
         public ActionResult AdminQuestionsEdit(FormQuestions formQuestions)
         {
             using (JuryModel db = new JuryModel())
             {
                 var updateQuestion = db.FormQuestions.Find(formQuestions.Id);
-                //updateQuestion.Category = formQuestions.Category;
-                updateQuestion.Category = db.FormQuestions.Find(formQuestions.Id).Category;
+                updateQuestion.Category = formQuestions.Category;
+                //updateQuestion.Category = db.FormQuestions.Find(formQuestions.Id).Category;
                 updateQuestion.Question = formQuestions.Question;
                 db.SaveChanges();
             }
             return RedirectToAction("AdminQuestions", "Admin");
         }
+        [Authorize]
+        public ActionResult AddQuestion()
+        {
+            return View();
+        }
+        [Authorize]
+        [HttpPost]
+        public ActionResult AddQuestion(FormQuestions formQuestions)
+        {
+            using (JuryModel db = new JuryModel())
+            {
+                db.FormQuestions.Add(formQuestions);
+                db.SaveChanges();
+            }
+            return RedirectToAction("AdminQuestions", "Admin");
+        }
+        [Authorize]
         public List<FormQuestions> questions()
         {
 
