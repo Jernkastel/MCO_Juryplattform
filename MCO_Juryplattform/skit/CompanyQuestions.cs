@@ -10,6 +10,6 @@ namespace MCO_Juryplattform.Models
         public int CompanyId { get; set; }
         public string Companyname { get; set; }
 
-        public List<Form> Forms{ get; set;}
+        public List<Grade> Grades{ get; set;}
     }
 }
