@@ -154,6 +154,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="skit\CompanyQuestions.cs" />
     <Compile Include="skit\Form.cs" />
     <Compile Include="Models\FormQuestions.cs" />
