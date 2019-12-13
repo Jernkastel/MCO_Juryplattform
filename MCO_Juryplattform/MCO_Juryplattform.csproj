@@ -152,8 +152,8 @@
       <DependentUpon>201912100155596_blergh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="skit\CompanyQuestions.cs" />
     <Compile Include="skit\Form.cs" />
     <Compile Include="Models\FormQuestions.cs" />
