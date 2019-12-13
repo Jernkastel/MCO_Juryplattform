@@ -1,61 +1,83 @@
 ﻿@model MCO_Juryplattform.Models.CompanyQuestions
 
 @{
-	ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 
 <h2>@Html.DisplayFor(modelItem => Model.Companyname)</h2>
 
-@using (Html.BeginForm("Geting", "Question", FormMethod.Post))
+@using (Html.BeginForm("Getting", "Question", FormMethod.Post))
 {
-	
-	<table class="table">
-		<tr>
-			<th>
-				<h2>Question</h2>
-			</th>
-			<th><label>avstå att svara</label></th>
-					<th><label>1</label></th>
-					<th><label>2</label></th>
-					<th><label>3</label></th>
-					<th><label>4</label></th>
-					<th><label>5</label></th>
+
+    <table class="table">
+        <tr>
+            <th>
+                <h2>Question</h2>
+            </th>
+            <th><label>avstå att svara</label></th>
+            <th><label>1</label></th>
+            <th><label>2</label></th>
+            <th><label>3</label></th>
+            <th><label>4</label></th>
+            <th><label>5</label></th>
 
 
+            <ul class="hidden">
+                @Html.TextBoxFor(model => model.CompanyId)
+            </ul>
+        </tr>
+        @for (int gradeId = 0; gradeId < Model.Grades.Count; gradeId++)
+        {
+            <li class="hidden">
+                @Html.TextBoxFor(model => model.Grades[gradeId].QuestionId)
+            </li>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.Grades[gradeId].Question)
 
-				</tr>
+                </td>
 
-				@foreach (var item in Model.Forms)
-				{
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 0)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 1)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 2)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 3)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 4)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(model => model.Grades[gradeId].Answer, 5)
+                </td>
 
-				<tr>
-					<td>
-						@Html.DisplayFor(modelItem => item.Question)
+                @*<td>
+                        @if (Model.Forms[i].Grade[j].Answers != null)
+                        {
+                            @Html.RadioButtonFor(m => m.Forms[i].FormId, new { id = j }, new { @checked = Model.Forms[i].Grade[j].Answers })
+                        }
+                        else
+                        {
+                        @Html.RadioButtonFor(m => m.Forms[i].FormId, new { id = j })
+                        }
 
-					</td>
-					@for (int i = 0; i < 6; i++)
-					{
-						<td>
-							@Html.RadioButton(item.FormId.ToString(), new { id = i })
-						</td>
-					}
+                    </td>*@
+            </tr>
+        }
+        @*<tr>
+                First name:
+                <input type="text" name="fname" />
+                <br />
+            </tr>*@
+        <tr>
 
-
-				</tr>
-				}
-		
-		@*<tr>
-			First name:
-			<input type="text" name="fname" />
-			<br />
-		</tr>*@
-
-		<tr>
-
-			<td><input type="submit" value="Submit" /></td>
-		</tr>
-
-	</table>
-	@Html.ActionLink("Geting", "Geting", "Question", new { fnamne = "uisod" })
-
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+    @Html.ActionLink("Getting", "Getting", "Question", new { fnamne = "uisod" })
 }
