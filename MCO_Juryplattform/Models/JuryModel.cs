@@ -12,6 +12,7 @@ namespace MCO_Juryplattform
         {
         }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<FormQuestions> FormQuestions { get; set; }
         public virtual DbSet<Login> Login { get; set; }
@@ -20,10 +21,9 @@ namespace MCO_Juryplattform
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<FormQuestions>()
+                .Property(e => e.Category)
+                .IsUnicode(false);
         }
-
-        //public System.Data.Entity.DbSet<MCO_Juryplattform.Models.Form> Forms { get; set; }
-
-        //public System.Data.Entity.DbSet<MCO_Juryplattform.Models.Form> Forms { get; set; }
     }
 }

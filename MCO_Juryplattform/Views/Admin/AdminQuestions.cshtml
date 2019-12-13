@@ -7,7 +7,7 @@
 <h2>AdminQuestions</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "AddQuestion")
 </p>
 <table class="table">
     <tr>
@@ -21,6 +21,10 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Question)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
         </td>
  
         <td>
