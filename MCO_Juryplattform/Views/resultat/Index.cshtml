@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MCO_Juryplattform.Models.ShowResult>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Resultat</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Companyname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totallpoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totallpointspercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.howMenyVoted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Companyname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totallpoints)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totallpointspercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.howMenyVoted)
+        </td>
+
+    </tr>
+}
+
+</table>

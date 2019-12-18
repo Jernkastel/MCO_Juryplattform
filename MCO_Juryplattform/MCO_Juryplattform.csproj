@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ResultatController.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
@@ -138,14 +139,14 @@
     <Compile Include="Models\JuryModel.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Result.cs" />
-    <Compile Include="skit\Grade.cs" />
-    <Compile Include="skit\CompanyQuestions.cs" />
-    <Compile Include="skit\Form.cs" />
+    <Compile Include="ViewModel\Grade.cs" />
+    <Compile Include="ViewModel\CompanyQuestions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\VoteCheck.cs" />
+    <Compile Include="ViewModel\ShowResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -193,6 +194,7 @@
     <Content Include="Views\Admin\AddCompany.cshtml" />
     <Content Include="Views\Admin\AdminQuestionsEdit.cshtml" />
     <Content Include="Views\Admin\AddQuestion.cshtml" />
+    <Content Include="Views\resultat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

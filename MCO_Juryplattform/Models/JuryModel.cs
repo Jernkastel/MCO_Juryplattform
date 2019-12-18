@@ -25,5 +25,7 @@ namespace MCO_Juryplattform
                 .Property(e => e.Category)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<MCO_Juryplattform.Models.ShowResult> ShowResults { get; set; }
     }
 }
