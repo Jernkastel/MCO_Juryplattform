@@ -32,7 +32,7 @@ namespace MCO_Juryplattform.Controllers
         [HttpGet]
         public ActionResult Link(string href)
         {
-            return Redirect("http://www.google.com");
+            return Redirect(href);
         }
     }
 }
