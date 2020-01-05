@@ -140,7 +140,6 @@
     <Compile Include="Models\Result.cs" />
     <Compile Include="skit\Grade.cs" />
     <Compile Include="skit\CompanyQuestions.cs" />
-    <Compile Include="skit\Form.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +192,7 @@
     <Content Include="Views\Admin\AddCompany.cshtml" />
     <Content Include="Views\Admin\AdminQuestionsEdit.cshtml" />
     <Content Include="Views\Admin\AddQuestion.cshtml" />
+    <Content Include="Views\Shared\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
