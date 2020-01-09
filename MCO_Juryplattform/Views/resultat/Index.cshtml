@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MCO_Juryplattform.Models.ShowResult>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Resultat</h2>
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Companyname)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.totallpoints)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.totallpointspercentage)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.howMenyVoted)
+		</th>
+
+	</tr>
+
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Companyname)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.totallpoints)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.totallpointspercentage)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.howMenyVoted)
+			</td>
+
+		</tr>
+	}
+	@* should be in a partial view och unvika hårdkåsning*@
+	@using (Html.BeginForm("KatagoryResult", "Resultat", FormMethod.Post))
+	{
+		<tr><h1>vällj kategori</h1></tr>
+		<tr>
+			<input list="Katagorys" name="katagory">
+			<datalist id="Katagorys">
+				<option value="Bird">
+				<option value="Fish">
+				<option value="Spider">
+				<option value="ingen">
+				<option value="Spider">
+			</datalist>
+			<input type="submit" value="Submit" />
+		</tr>
+	}
+
+
+</table>
