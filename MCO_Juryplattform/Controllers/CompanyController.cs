@@ -17,7 +17,12 @@ namespace MCO_Juryplattform.Controllers
         {
             using (JuryModel db = new JuryModel())
             {
-                return db.Company.ToList();
+
+                int id = (int)(Session["id"]);
+                var temp = db.VoteCheck.Where(e => e.UserId == id)
+                                       .Select(e => e.CompanyId).ToList();
+                return db.Company.Where(e => !temp.Contains(e.Id)).ToList();
+
             }
         }
         [Authorize]

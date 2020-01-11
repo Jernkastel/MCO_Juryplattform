@@ -43,13 +43,14 @@ namespace MCO_Juryplattform.Controllers
         {
             using (JuryModel db = new JuryModel())
             {
-                VoteCheck temp = new VoteCheck();
-                temp.CompanyId = test.CompanyId;
-                temp.IsVoted = true;
-                //temp.UserId= 
+                VoteCheck newVot = new VoteCheck();
+                newVot.CompanyId = test.CompanyId;
+                newVot.IsVoted = true;
+                newVot.UserId= (int)(Session["id"]);
+                db.VoteCheck.Add(newVot);
 
-                db.VoteCheck.Add(temp);
-                //db.SaveChanges();
+                var temp = db.VoteCheck;
+                db.SaveChanges();
             }
         } 
 

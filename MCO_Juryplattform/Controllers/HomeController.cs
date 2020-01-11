@@ -29,7 +29,7 @@ namespace MCO_Juryplattform.Controllers
             if (logg.UserName == null || logg.Password == null)
             {
                 ModelState.AddModelError("", "Du måste ange användarnamn och lösenord");
-                return View();
+                return RedirectToAction("Index");
             }
 
             bool validUser = false;
@@ -38,6 +38,7 @@ namespace MCO_Juryplattform.Controllers
             if (validUser)
             {
                 System.Web.Security.FormsAuthentication.RedirectFromLoginPage(logg.UserName, false);
+                
             }
             ModelState.AddModelError("", "Inloggningen misslyckades, vänligen försök igen");
             return RedirectToAction("Index", "Company");
@@ -60,6 +61,7 @@ namespace MCO_Juryplattform.Controllers
 
             if (user.Count() == 1)
             {
+                Session["id"] = user.First().Id;
                 return true;
             }
             else
