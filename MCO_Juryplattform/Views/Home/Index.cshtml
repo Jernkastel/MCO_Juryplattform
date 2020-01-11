@@ -2,14 +2,15 @@
 
 @{
 	ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/Login.cshtml";
 }
 
-<h1>Logga in</h1>
+<h1>Ange Användaruppgifter</h1>
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
 	<div>
-		<div>Namn: </div>
+		<div>Användarnamn: </div>
 		<div>@Html.TextBoxFor(m => m.UserName)</div>
 	</div>
 
@@ -17,7 +18,7 @@
 		<div>Lösenord: </div>
 		<div>@Html.PasswordFor(m => m.Password)</div>
 	</div>
-
+    <br />
 	<div>
 		<input type="submit" value="Logga in" class="btn btn-default" />
 	</div>
@@ -25,4 +26,3 @@
 		@Html.ValidationSummary()
 	</div>
 }
-@Html.ActionLink("index", "index", "Question")
